@@ -18,6 +18,8 @@ brew install --cask phtv
 brew install --cask phamhungtien/tap/phtv
 ```
 
+Homebrew will automatically pick the correct DMG for Apple Silicon (`arm64`) or Intel Macs on split-binary releases.
+
 ## Update
 
 ```bash
@@ -32,8 +34,8 @@ brew uninstall --cask phtv
 
 ## Requirements
 
-- macOS 14.0+ (Sonoma or later)
-- Universal Binary - supports both Intel and Apple Silicon
+- macOS 13.0+ (Ventura or later)
+- Split binaries for Apple Silicon and Intel on new releases
 
 ## Post-Installation
 
