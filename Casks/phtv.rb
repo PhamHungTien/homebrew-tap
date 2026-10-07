@@ -7,8 +7,7 @@ cask "phtv" do
   version "3.6.3"
   if version.to_s == "2.6.6"
     sha256 "ad4132a20aebe701f418a3196a0075ccb91277b4a156932192f91c8fd7f1d045"
-    url "https://github.com/PhamHungTien/PHTV/releases/download/v#{version}/PHTV-#{version}.dmg",
-        verified: "github.com/PhamHungTien/"
+    url "https://github.com/PhamHungTien/PHTV/releases/download/v#{version}/PHTV-#{version}.dmg"
   else
     on_arm do
       sha256 "2f5a5330634946ad2989db7fc47799cc12acdc08dfb39109521f68ece14385e8"
@@ -18,8 +17,7 @@ cask "phtv" do
       sha256 "fa6bf63c1ccd42904f4a704b48e186205cfb18ecfccada88d7e3bce4f4487733"
     end
 
-    url "https://github.com/PhamHungTien/PHTV/releases/download/v#{version}/PHTV-#{version}-#{arch}.dmg",
-        verified: "github.com/PhamHungTien/"
+    url "https://github.com/PhamHungTien/PHTV/releases/download/v#{version}/PHTV-#{version}-#{arch}.dmg"
   end
 
   name "PHTV"
