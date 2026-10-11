@@ -21,8 +21,9 @@ brew update
 brew info --cask phtv
 ```
 
-Check that `From` points to `Homebrew/homebrew-cask`. If your installed cask
-still belongs to this tap, quit PHTV and switch manually:
+The `From` line confirms the official cask is available; it does not prove
+that an existing installation has changed taps. If you installed from this
+tap and have not switched manually, quit PHTV and run:
 
 ```bash
 brew uninstall --cask phamhungtien/tap/phtv
