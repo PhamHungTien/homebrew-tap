@@ -1,57 +1,56 @@
-# Homebrew Tap for PHTV
+# PHTV Homebrew tap migration
 
-Official Homebrew tap for [PHTV](https://github.com/PhamHungTien/PHTV) - Modern Vietnamese input method for macOS.
+[PHTV](https://github.com/PhamHungTien/PHTV) is now available in the official
+[Homebrew Cask repository](https://formulae.brew.sh/cask/phtv).
 
-## Installation
+## Install
 
 ```bash
-# Add this tap
-brew tap phamhungtien/tap
-
-# Install PHTV
 brew install --cask phtv
 ```
 
-## One-liner Installation
+Requires macOS 14 or later. Apple Silicon and Intel downloads are supported.
+
+## Existing tap users
+
+This repository remains available with `tap_migrations.json` so Homebrew can
+resolve the old `phamhungtien/tap/phtv` name to `homebrew/cask/phtv`.
 
 ```bash
-brew install --cask phamhungtien/tap/phtv
+brew update
+brew info --cask phtv
 ```
 
-Homebrew will automatically pick the correct DMG for Apple Silicon (`arm64`) or Intel Macs on split-binary releases.
-
-## Update
+Check that `From` points to `Homebrew/homebrew-cask`. If your installed cask
+still belongs to this tap, quit PHTV and switch manually:
 
 ```bash
-brew upgrade --cask phtv
+brew uninstall --cask phamhungtien/tap/phtv
+brew install --cask homebrew/cask/phtv
 ```
 
-## Uninstall
+Do not use `--zap` during migration: it removes PHTV settings and user data.
+Confirm the official cask is available before uninstalling your existing copy:
 
 ```bash
-brew uninstall --cask phtv
+brew info --cask homebrew/cask/phtv
 ```
 
-## Requirements
+After a successful switch, if you do not use any other packages from this tap:
 
-- macOS 13.0+ (Ventura or later)
-- Split binaries for Apple Silicon and Intel on new releases
+```bash
+brew untap phamhungtien/tap
+```
 
-## Post-Installation
+macOS may ask you to grant PHTV its input-control permission again after replacing
+the application. Follow the [installation guide](https://github.com/PhamHungTien/PHTV/blob/main/docs/INSTALL.md).
 
-After installation, PHTV requires Accessibility permission:
-
-1. Open **System Settings**
-2. Go to **Privacy & Security** > **Accessibility**
-3. Enable **PHTV**
+Future cask updates are maintained in `Homebrew/homebrew-cask`; this tap no
+longer publishes its own PHTV cask. PHTV also supports updates via Sparkle.
 
 ## Links
 
-- [PHTV Homepage](https://phamhungtien.com/PHTV/)
-- [GitHub Repository](https://github.com/PhamHungTien/PHTV)
-- [Report Issues](https://github.com/PhamHungTien/PHTV/issues)
-- [Documentation](https://github.com/PhamHungTien/PHTV/blob/main/README.md)
-
-## License
-
-GPL-3.0 License - See [LICENSE](https://github.com/PhamHungTien/PHTV/blob/main/LICENSE)
+- [PHTV homepage](https://phamhungtien.com/PHTV/)
+- [Official cask](https://formulae.brew.sh/cask/phtv)
+- [Source and releases](https://github.com/PhamHungTien/PHTV)
+- [Report PHTV issues](https://github.com/PhamHungTien/PHTV/issues)
